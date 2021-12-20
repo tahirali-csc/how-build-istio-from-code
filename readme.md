@@ -1,10 +1,13 @@
-**Install istio from code.From base directory, run:**
+**Install istio from code on minikube.**
+
+From base directory, run:
 ```bash
 go run istioctl/cmd/istioctl/main.go install
 ```
 
 **Install examples**
-From the base directory, run
+
+From the base directory, follow booksinfo
 https://istio.io/latest/docs/examples/bookinfo/
 
 Follow all step thru Gateway and access the product page on browser:
@@ -17,7 +20,8 @@ http://Host:NodePort/productpage
 ```
 
 **Build and Debug**
-[Hack]
+[Workaround approach]
+
 From Istio base directory, create this
 mkdir -p ./out/linux_amd64/docker_build/docker.pilot/
 
@@ -84,6 +88,6 @@ You might have tweak securityContext for dlv. Change this in IstioD deploymet:
             allowPrivilegeEscalation: true         
 ```            
 
-1. Setup port forwarding 40000 from isioD
+7. Setup istioD port forwarding from 40000.
 
-2. Add Intellij remote debug wit 40000
+8. Add Intellij remote debug from host:localhost and port 40000
