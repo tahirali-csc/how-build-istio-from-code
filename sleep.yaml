@@ -1,0 +1,600 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sleep
+  namespace: default
+  selfLink: /apis/apps/v1/namespaces/default/deployments/sleep
+  uid: 89e0c57e-0d6c-4161-9f8f-dd7e289e459f
+  resourceVersion: '235043'
+  generation: 22
+  creationTimestamp: '2021-11-27T17:06:49Z'
+  annotations:
+    deployment.kubernetes.io/revision: '6'
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"apps/v1","kind":"Deployment","metadata":{"annotations":{"deployment.kubernetes.io/revision":"3"},"creationTimestamp":"2021-11-27T17:06:49Z","generation":11,"managedFields":[{"apiVersion":"apps/v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{".":{},"f:kubectl.kubernetes.io/last-applied-configuration":{}}},"f:spec":{"f:progressDeadlineSeconds":{},"f:replicas":{},"f:revisionHistoryLimit":{},"f:selector":{"f:matchLabels":{".":{},"f:app":{}}},"f:strategy":{"f:rollingUpdate":{".":{},"f:maxSurge":{},"f:maxUnavailable":{}},"f:type":{}},"f:template":{"f:metadata":{"f:annotations":{".":{},"f:kubectl.kubernetes.io/default-container":{},"f:kubectl.kubernetes.io/default-logs-container":{},"f:prometheus.io/path":{},"f:prometheus.io/port":{},"f:prometheus.io/scrape":{},"f:sidecar.istio.io/status":{}},"f:labels":{".":{},"f:app":{},"f:security.istio.io/tlsMode":{},"f:service.istio.io/canonical-name":{},"f:service.istio.io/canonical-revision":{}}},"f:spec":{"f:containers":{"k:{\"name\":\"istio-proxy\"}":{".":{},"f:args":{},"f:env":{".":{},"k:{\"name\":\"CA_ADDR\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"HOST_IP\"}":{".":{},"f:name":{},"f:valueFrom":{".":{},"f:fieldRef":{".":{},"f:apiVersion":{},"f:fieldPath":{}}}},"k:{\"name\":\"INSTANCE_IP\"}":{".":{},"f:name":{},"f:valueFrom":{".":{},"f:fieldRef":{".":{},"f:apiVersion":{},"f:fieldPath":{}}}},"k:{\"name\":\"ISTIO_META_APP_CONTAINERS\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"ISTIO_META_CLUSTER_ID\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"ISTIO_META_INTERCEPTION_MODE\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"ISTIO_META_MESH_ID\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"ISTIO_META_OWNER\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"ISTIO_META_POD_PORTS\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"ISTIO_META_WORKLOAD_NAME\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"JWT_POLICY\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"PILOT_CERT_PROVIDER\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"POD_NAME\"}":{".":{},"f:name":{},"f:valueFrom":{".":{},"f:fieldRef":{".":{},"f:apiVersion":{},"f:fieldPath":{}}}},"k:{\"name\":\"POD_NAMESPACE\"}":{".":{},"f:name":{},"f:valueFrom":{".":{},"f:fieldRef":{".":{},"f:apiVersion":{},"f:fieldPath":{}}}},"k:{\"name\":\"PROXY_CONFIG\"}":{".":{},"f:name":{},"f:value":{}},"k:{\"name\":\"SERVICE_ACCOUNT\"}":{".":{},"f:name":{},"f:valueFrom":{".":{},"f:fieldRef":{".":{},"f:apiVersion":{},"f:fieldPath":{}}}},"k:{\"name\":\"TRUST_DOMAIN\"}":{".":{},"f:name":{},"f:value":{}}},"f:image":{},"f:imagePullPolicy":{},"f:name":{},"f:ports":{".":{},"k:{\"containerPort\":15090,\"protocol\":\"TCP\"}":{".":{},"f:containerPort":{},"f:name":{},"f:protocol":{}},"k:{\"containerPort\":40000,\"protocol\":\"TCP\"}":{".":{},"f:containerPort":{},"f:name":{},"f:protocol":{}}},"f:readinessProbe":{".":{},"f:failureThreshold":{},"f:httpGet":{".":{},"f:path":{},"f:port":{},"f:scheme":{}},"f:initialDelaySeconds":{},"f:periodSeconds":{},"f:successThreshold":{},"f:timeoutSeconds":{}},"f:resources":{".":{},"f:limits":{".":{},"f:cpu":{},"f:memory":{}},"f:requests":{".":{},"f:cpu":{},"f:memory":{}}},"f:securityContext":{".":{},"f:allowPrivilegeEscalation":{},"f:capabilities":{".":{},"f:drop":{}},"f:privileged":{},"f:readOnlyRootFilesystem":{},"f:runAsGroup":{},"f:runAsNonRoot":{},"f:runAsUser":{}},"f:terminationMessagePath":{},"f:terminationMessagePolicy":{},"f:volumeMounts":{".":{},"k:{\"mountPath\":\"/etc/istio/pod\"}":{".":{},"f:mountPath":{},"f:name":{}},"k:{\"mountPath\":\"/etc/istio/proxy\"}":{".":{},"f:mountPath":{},"f:name":{}},"k:{\"mountPath\":\"/var/lib/istio/data\"}":{".":{},"f:mountPath":{},"f:name":{}},"k:{\"mountPath\":\"/var/run/secrets/istio\"}":{".":{},"f:mountPath":{},"f:name":{}}}},"k:{\"name\":\"sleep\"}":{".":{},"f:command":{},"f:image":{},"f:imagePullPolicy":{},"f:name":{},"f:resources":{},"f:terminationMessagePath":{},"f:terminationMessagePolicy":{},"f:volumeMounts":{".":{},"k:{\"mountPath\":\"/etc/sleep/tls\"}":{".":{},"f:mountPath":{},"f:name":{}}}}},"f:dnsPolicy":{},"f:initContainers":{".":{},"k:{\"name\":\"istio-init\"}":{".":{},"f:args":{},"f:image":{},"f:imagePullPolicy":{},"f:name":{},"f:resources":{".":{},"f:limits":{".":{},"f:cpu":{},"f:memory":{}},"f:requests":{".":{},"f:cpu":{},"f:memory":{}}},"f:securityContext":{".":{},"f:allowPrivilegeEscalation":{},"f:capabilities":{".":{},"f:add":{},"f:drop":{}},"f:privileged":{},"f:readOnlyRootFilesystem":{},"f:runAsGroup":{},"f:runAsNonRoot":{},"f:runAsUser":{}},"f:terminationMessagePath":{},"f:terminationMessagePolicy":{}}},"f:restartPolicy":{},"f:schedulerName":{},"f:securityContext":{".":{},"f:fsGroup":{}},"f:serviceAccount":{},"f:serviceAccountName":{},"f:terminationGracePeriodSeconds":{},"f:volumes":{".":{},"k:{\"name\":\"istio-data\"}":{".":{},"f:emptyDir":{},"f:name":{}},"k:{\"name\":\"istio-envoy\"}":{".":{},"f:emptyDir":{".":{},"f:medium":{}},"f:name":{}},"k:{\"name\":\"istio-podinfo\"}":{".":{},"f:downwardAPI":{".":{},"f:defaultMode":{},"f:items":{}},"f:name":{}},"k:{\"name\":\"istiod-ca-cert\"}":{".":{},"f:configMap":{".":{},"f:defaultMode":{},"f:name":{}},"f:name":{}},"k:{\"name\":\"secret-volume\"}":{".":{},"f:name":{},"f:secret":{".":{},"f:defaultMode":{},"f:optional":{},"f:secretName":{}}}}}}}},"manager":"kubectl","operation":"Update","time":"2021-11-27T17:28:59Z"},{"apiVersion":"apps/v1","fieldsType":"FieldsV1","fieldsV1":{"f:metadata":{"f:annotations":{"f:deployment.kubernetes.io/revision":{}}},"f:status":{"f:conditions":{"k:{\"type\":\"Available\"}":{"f:lastTransitionTime":{},"f:lastUpdateTime":{},"f:message":{},"f:reason":{},"f:status":{}},"k:{\"type\":\"Progressing\"}":{"f:lastUpdateTime":{},"f:message":{},"f:reason":{}}},"f:observedGeneration":{},"f:replicas":{},"f:unavailableReplicas":{},"f:updatedReplicas":{}}},"manager":"kube-controller-manager","operation":"Update","time":"2021-11-27T17:48:13Z"}],"name":"sleep","namespace":"default","selfLink":"/apis/apps/v1/namespaces/default/deployments/sleep","uid":"89e0c57e-0d6c-4161-9f8f-dd7e289e459f"},"spec":{"progressDeadlineSeconds":600,"replicas":1,"revisionHistoryLimit":10,"selector":{"matchLabels":{"app":"sleep"}},"strategy":{"rollingUpdate":{"maxSurge":"25%","maxUnavailable":"25%"},"type":"RollingUpdate"},"template":{"metadata":{"annotations":{"kubectl.kubernetes.io/default-container":"sleep","kubectl.kubernetes.io/default-logs-container":"sleep","prometheus.io/path":"/stats/prometheus","prometheus.io/port":"15020","prometheus.io/scrape":"true","sidecar.istio.io/status":"{\"initContainers\":[\"istio-init\"],\"containers\":[\"istio-proxy\"],\"volumes\":[\"istio-envoy\",\"istio-data\",\"istio-podinfo\",\"istiod-ca-cert\"],\"imagePullSecrets\":null,\"revision\":\"default\"}"},"creationTimestamp":null,"labels":{"app":"sleep","security.istio.io/tlsMode":"istio","service.istio.io/canonical-name":"sleep","service.istio.io/canonical-revision":"latest"}},"spec":{"containers":[{"command":["/bin/sleep","3650d"],"image":"curlimages/curl","imagePullPolicy":"Always","name":"sleep","resources":{},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","volumeMounts":[{"mountPath":"/etc/sleep/tls","name":"secret-volume"}]},{"args":["proxy","sidecar","--domain","$(POD_NAMESPACE).svc.cluster.local","--proxyLogLevel=warning","--proxyComponentLogLevel=misc:error","--log_output_level=default:info","--concurrency","2"],"env":[{"name":"JWT_POLICY","value":"first-party-jwt"},{"name":"PILOT_CERT_PROVIDER","value":"istiod"},{"name":"CA_ADDR","value":"istiod.istio-system.svc:15012"},{"name":"POD_NAME","valueFrom":{"fieldRef":{"apiVersion":"v1","fieldPath":"metadata.name"}}},{"name":"POD_NAMESPACE","valueFrom":{"fieldRef":{"apiVersion":"v1","fieldPath":"metadata.namespace"}}},{"name":"INSTANCE_IP","valueFrom":{"fieldRef":{"apiVersion":"v1","fieldPath":"status.podIP"}}},{"name":"SERVICE_ACCOUNT","valueFrom":{"fieldRef":{"apiVersion":"v1","fieldPath":"spec.serviceAccountName"}}},{"name":"HOST_IP","valueFrom":{"fieldRef":{"apiVersion":"v1","fieldPath":"status.hostIP"}}},{"name":"PROXY_CONFIG","value":"{}\n"},{"name":"ISTIO_META_POD_PORTS","value":"[\n]"},{"name":"ISTIO_META_APP_CONTAINERS","value":"sleep"},{"name":"ISTIO_META_CLUSTER_ID","value":"Kubernetes"},{"name":"ISTIO_META_INTERCEPTION_MODE","value":"REDIRECT"},{"name":"ISTIO_META_WORKLOAD_NAME","value":"sleep"},{"name":"ISTIO_META_OWNER","value":"kubernetes://apis/apps/v1/namespaces/default/deployments/sleep"},{"name":"ISTIO_META_MESH_ID","value":"cluster.local"},{"name":"TRUST_DOMAIN","value":"cluster.local"}],"image":"my-local/proxyv2:latest","imagePullPolicy":"Never","name":"istio-proxy","ports":[{"containerPort":15090,"name":"http-envoy-prom","protocol":"TCP"},{"containerPort":40000,"name":"dlv-debug","protocol":"TCP"}],"readinessProbe":{"failureThreshold":30,"httpGet":{"path":"/healthz/ready","port":15021,"scheme":"HTTP"},"initialDelaySeconds":1,"periodSeconds":2,"successThreshold":1,"timeoutSeconds":3},"resources":{"limits":{"cpu":"2","memory":"1Gi"},"requests":{"cpu":"10m","memory":"40Mi"}},"securityContext":{"allowPrivilegeEscalation":false,"capabilities":{"drop":["ALL"]},"privileged":false,"readOnlyRootFilesystem":true,"runAsGroup":1337,"runAsNonRoot":true,"runAsUser":1337},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File","volumeMounts":[{"mountPath":"/var/run/secrets/istio","name":"istiod-ca-cert"},{"mountPath":"/var/lib/istio/data","name":"istio-data"},{"mountPath":"/etc/istio/proxy","name":"istio-envoy"},{"mountPath":"/etc/istio/pod","name":"istio-podinfo"}]}],"dnsPolicy":"ClusterFirst","initContainers":[{"args":["istio-iptables","-p","15001","-z","15006","-u","1337","-m","REDIRECT","-i","*","-x","","-b","*","-d","15090,15021,15020"],"image":"my-local/pilot-init:latest","imagePullPolicy":"Never","name":"istio-init","resources":{"limits":{"cpu":"2","memory":"1Gi"},"requests":{"cpu":"10m","memory":"40Mi"}},"securityContext":{"allowPrivilegeEscalation":false,"capabilities":{"add":["NET_ADMIN","NET_RAW"],"drop":["ALL"]},"privileged":false,"readOnlyRootFilesystem":false,"runAsGroup":0,"runAsNonRoot":false,"runAsUser":0},"terminationMessagePath":"/dev/termination-log","terminationMessagePolicy":"File"}],"restartPolicy":"Always","schedulerName":"default-scheduler","securityContext":{"fsGroup":1337},"serviceAccount":"sleep","serviceAccountName":"sleep","terminationGracePeriodSeconds":0,"volumes":[{"emptyDir":{"medium":"Memory"},"name":"istio-envoy"},{"emptyDir":{},"name":"istio-data"},{"downwardAPI":{"defaultMode":420,"items":[{"fieldRef":{"apiVersion":"v1","fieldPath":"metadata.labels"},"path":"labels"},{"fieldRef":{"apiVersion":"v1","fieldPath":"metadata.annotations"},"path":"annotations"}]},"name":"istio-podinfo"},{"configMap":{"defaultMode":420,"name":"istio-ca-root-cert"},"name":"istiod-ca-cert"},{"name":"secret-volume","secret":{"defaultMode":420,"optional":true,"secretName":"sleep-secret"}}]}}}}
+  managedFields:
+    - manager: kubectl
+      operation: Update
+      apiVersion: apps/v1
+      time: '2021-11-27T17:49:49Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            .: {}
+            f:kubectl.kubernetes.io/last-applied-configuration: {}
+        f:spec:
+          f:progressDeadlineSeconds: {}
+          f:revisionHistoryLimit: {}
+          f:selector:
+            f:matchLabels:
+              .: {}
+              f:app: {}
+          f:strategy:
+            f:rollingUpdate:
+              .: {}
+              f:maxSurge: {}
+              f:maxUnavailable: {}
+            f:type: {}
+          f:template:
+            f:metadata:
+              f:annotations:
+                .: {}
+                f:kubectl.kubernetes.io/default-container: {}
+                f:kubectl.kubernetes.io/default-logs-container: {}
+                f:prometheus.io/path: {}
+                f:prometheus.io/port: {}
+                f:prometheus.io/scrape: {}
+                f:sidecar.istio.io/status: {}
+              f:labels:
+                .: {}
+                f:app: {}
+                f:security.istio.io/tlsMode: {}
+                f:service.istio.io/canonical-name: {}
+                f:service.istio.io/canonical-revision: {}
+            f:spec:
+              f:containers:
+                k:{"name":"istio-proxy"}:
+                  .: {}
+                  f:args: {}
+                  f:env:
+                    .: {}
+                    k:{"name":"CA_ADDR"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"HOST_IP"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef:
+                          .: {}
+                          f:apiVersion: {}
+                          f:fieldPath: {}
+                    k:{"name":"INSTANCE_IP"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef:
+                          .: {}
+                          f:apiVersion: {}
+                          f:fieldPath: {}
+                    k:{"name":"ISTIO_META_APP_CONTAINERS"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ISTIO_META_CLUSTER_ID"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ISTIO_META_INTERCEPTION_MODE"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ISTIO_META_MESH_ID"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ISTIO_META_OWNER"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ISTIO_META_POD_PORTS"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"ISTIO_META_WORKLOAD_NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"JWT_POLICY"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"PILOT_CERT_PROVIDER"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"POD_NAME"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef:
+                          .: {}
+                          f:apiVersion: {}
+                          f:fieldPath: {}
+                    k:{"name":"POD_NAMESPACE"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef:
+                          .: {}
+                          f:apiVersion: {}
+                          f:fieldPath: {}
+                    k:{"name":"PROXY_CONFIG"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                    k:{"name":"SERVICE_ACCOUNT"}:
+                      .: {}
+                      f:name: {}
+                      f:valueFrom:
+                        .: {}
+                        f:fieldRef:
+                          .: {}
+                          f:apiVersion: {}
+                          f:fieldPath: {}
+                    k:{"name":"TRUST_DOMAIN"}:
+                      .: {}
+                      f:name: {}
+                      f:value: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:ports:
+                    .: {}
+                    k:{"containerPort":15090,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+                  f:readinessProbe:
+                    .: {}
+                    f:failureThreshold: {}
+                    f:httpGet:
+                      .: {}
+                      f:path: {}
+                      f:port: {}
+                      f:scheme: {}
+                    f:initialDelaySeconds: {}
+                    f:periodSeconds: {}
+                    f:successThreshold: {}
+                    f:timeoutSeconds: {}
+                  f:resources:
+                    .: {}
+                    f:limits:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:drop: {}
+                    f:privileged: {}
+                    f:readOnlyRootFilesystem: {}
+                    f:runAsGroup: {}
+                    f:runAsNonRoot: {}
+                    f:runAsUser: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/istio/pod"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/etc/istio/proxy"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/var/lib/istio/data"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                    k:{"mountPath":"/var/run/secrets/istio"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+                k:{"name":"sleep"}:
+                  .: {}
+                  f:command: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+                  f:volumeMounts:
+                    .: {}
+                    k:{"mountPath":"/etc/sleep/tls"}:
+                      .: {}
+                      f:mountPath: {}
+                      f:name: {}
+              f:dnsPolicy: {}
+              f:initContainers:
+                .: {}
+                k:{"name":"istio-init"}:
+                  .: {}
+                  f:args: {}
+                  f:image: {}
+                  f:imagePullPolicy: {}
+                  f:name: {}
+                  f:resources:
+                    .: {}
+                    f:limits:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                    f:requests:
+                      .: {}
+                      f:cpu: {}
+                      f:memory: {}
+                  f:securityContext:
+                    .: {}
+                    f:allowPrivilegeEscalation: {}
+                    f:capabilities:
+                      .: {}
+                      f:add: {}
+                      f:drop: {}
+                    f:privileged: {}
+                    f:readOnlyRootFilesystem: {}
+                    f:runAsGroup: {}
+                    f:runAsNonRoot: {}
+                    f:runAsUser: {}
+                  f:terminationMessagePath: {}
+                  f:terminationMessagePolicy: {}
+              f:restartPolicy: {}
+              f:schedulerName: {}
+              f:securityContext:
+                .: {}
+                f:fsGroup: {}
+              f:serviceAccount: {}
+              f:serviceAccountName: {}
+              f:terminationGracePeriodSeconds: {}
+              f:volumes:
+                .: {}
+                k:{"name":"istio-data"}:
+                  .: {}
+                  f:emptyDir: {}
+                  f:name: {}
+                k:{"name":"istio-envoy"}:
+                  .: {}
+                  f:emptyDir:
+                    .: {}
+                    f:medium: {}
+                  f:name: {}
+                k:{"name":"istio-podinfo"}:
+                  .: {}
+                  f:downwardAPI:
+                    .: {}
+                    f:defaultMode: {}
+                    f:items: {}
+                  f:name: {}
+                k:{"name":"istiod-ca-cert"}:
+                  .: {}
+                  f:configMap:
+                    .: {}
+                    f:defaultMode: {}
+                    f:name: {}
+                  f:name: {}
+                k:{"name":"secret-volume"}:
+                  .: {}
+                  f:name: {}
+                  f:secret:
+                    .: {}
+                    f:defaultMode: {}
+                    f:optional: {}
+                    f:secretName: {}
+    - manager: node-fetch
+      operation: Update
+      apiVersion: apps/v1
+      time: '2021-12-05T04:57:31Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:spec:
+          f:replicas: {}
+          f:template:
+            f:spec:
+              f:containers:
+                k:{"name":"istio-proxy"}:
+                  f:ports:
+                    k:{"containerPort":40000,"protocol":"TCP"}:
+                      .: {}
+                      f:containerPort: {}
+                      f:name: {}
+                      f:protocol: {}
+    - manager: kube-controller-manager
+      operation: Update
+      apiVersion: apps/v1
+      time: '2021-12-11T17:40:04Z'
+      fieldsType: FieldsV1
+      fieldsV1:
+        f:metadata:
+          f:annotations:
+            f:deployment.kubernetes.io/revision: {}
+        f:status:
+          f:conditions:
+            k:{"type":"Available"}:
+              f:lastTransitionTime: {}
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+              f:status: {}
+            k:{"type":"Progressing"}:
+              f:lastUpdateTime: {}
+              f:message: {}
+              f:reason: {}
+          f:observedGeneration: {}
+          f:replicas: {}
+          f:unavailableReplicas: {}
+          f:updatedReplicas: {}
+status:
+  observedGeneration: 22
+  replicas: 1
+  updatedReplicas: 1
+  unavailableReplicas: 1
+  conditions:
+    - type: Progressing
+      status: 'True'
+      lastUpdateTime: '2021-12-05T04:52:03Z'
+      lastTransitionTime: '2021-11-27T17:06:49Z'
+      reason: NewReplicaSetAvailable
+      message: ReplicaSet "sleep-66f7dff94c" has successfully progressed.
+    - type: Available
+      status: 'False'
+      lastUpdateTime: '2021-12-11T17:40:04Z'
+      lastTransitionTime: '2021-12-11T17:40:04Z'
+      reason: MinimumReplicasUnavailable
+      message: Deployment does not have minimum availability.
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sleep
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: sleep
+        security.istio.io/tlsMode: istio
+        service.istio.io/canonical-name: sleep
+        service.istio.io/canonical-revision: latest
+      annotations:
+        kubectl.kubernetes.io/default-container: sleep
+        kubectl.kubernetes.io/default-logs-container: sleep
+        prometheus.io/path: /stats/prometheus
+        prometheus.io/port: '15020'
+        prometheus.io/scrape: 'true'
+        sidecar.istio.io/status: >-
+          {"initContainers":["istio-init"],"containers":["istio-proxy"],"volumes":["istio-envoy","istio-data","istio-podinfo","istiod-ca-cert"],"imagePullSecrets":null,"revision":"default"}
+    spec:
+      volumes:
+        - name: istio-envoy
+          emptyDir:
+            medium: Memory
+        - name: istio-data
+          emptyDir: {}
+        - name: istio-podinfo
+          downwardAPI:
+            items:
+              - path: labels
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.labels
+              - path: annotations
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.annotations
+            defaultMode: 420
+        - name: istiod-ca-cert
+          configMap:
+            name: istio-ca-root-cert
+            defaultMode: 420
+        - name: secret-volume
+          secret:
+            secretName: sleep-secret
+            defaultMode: 420
+            optional: true
+      initContainers:
+        - name: istio-init
+          image: my-local/pilot-init:latest
+          args:
+            - istio-iptables
+            - '-p'
+            - '15001'
+            - '-z'
+            - '15006'
+            - '-u'
+            - '1337'
+            - '-m'
+            - REDIRECT
+            - '-i'
+            - '*'
+            - '-x'
+            - ''
+            - '-b'
+            - '*'
+            - '-d'
+            - 15090,15021,15020
+          resources:
+            limits:
+              cpu: '2'
+              memory: 1Gi
+            requests:
+              cpu: 10m
+              memory: 40Mi
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: Never
+          securityContext:
+            capabilities:
+              add:
+                - NET_ADMIN
+                - NET_RAW
+              drop:
+                - ALL
+            privileged: false
+            runAsUser: 0
+            runAsGroup: 0
+            runAsNonRoot: false
+            readOnlyRootFilesystem: false
+            allowPrivilegeEscalation: false
+      containers:
+        - name: sleep
+          image: curlimages/curl
+          command:
+            - /bin/sleep
+            - 3650d
+          resources: {}
+          volumeMounts:
+            - name: secret-volume
+              mountPath: /etc/sleep/tls
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: Always
+        - name: istio-proxy
+          image: my-local/proxyv2:latest
+          args:
+            - proxy
+            - sidecar
+            - '--domain'
+            - $(POD_NAMESPACE).svc.cluster.local
+            - '--proxyLogLevel=warning'
+            - '--proxyComponentLogLevel=misc:error'
+            - '--log_output_level=default:info'
+            - '--concurrency'
+            - '2'
+          ports:
+            - name: http-envoy-prom
+              containerPort: 15090
+              protocol: TCP
+            - name: dlv-debug
+              containerPort: 40000
+              protocol: TCP
+          env:
+            - name: JWT_POLICY
+              value: first-party-jwt
+            - name: PILOT_CERT_PROVIDER
+              value: istiod
+            - name: CA_ADDR
+              value: istiod.istio-system.svc:15012
+            - name: POD_NAME
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.name
+            - name: POD_NAMESPACE
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: metadata.namespace
+            - name: INSTANCE_IP
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: status.podIP
+            - name: SERVICE_ACCOUNT
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: spec.serviceAccountName
+            - name: HOST_IP
+              valueFrom:
+                fieldRef:
+                  apiVersion: v1
+                  fieldPath: status.hostIP
+            - name: PROXY_CONFIG
+              value: |
+                {}
+            - name: ISTIO_META_POD_PORTS
+              value: |-
+                [
+                ]
+            - name: ISTIO_META_APP_CONTAINERS
+              value: sleep
+            - name: ISTIO_META_CLUSTER_ID
+              value: Kubernetes
+            - name: ISTIO_META_INTERCEPTION_MODE
+              value: REDIRECT
+            - name: ISTIO_META_WORKLOAD_NAME
+              value: sleep
+            - name: ISTIO_META_OWNER
+              value: kubernetes://apis/apps/v1/namespaces/default/deployments/sleep
+            - name: ISTIO_META_MESH_ID
+              value: cluster.local
+            - name: TRUST_DOMAIN
+              value: cluster.local
+          resources:
+            limits:
+              cpu: '2'
+              memory: 1Gi
+            requests:
+              cpu: 10m
+              memory: 40Mi
+          volumeMounts:
+            - name: istiod-ca-cert
+              mountPath: /var/run/secrets/istio
+            - name: istio-data
+              mountPath: /var/lib/istio/data
+            - name: istio-envoy
+              mountPath: /etc/istio/proxy
+            - name: istio-podinfo
+              mountPath: /etc/istio/pod
+          readinessProbe:
+            httpGet:
+              path: /healthz/ready
+              port: 15021
+              scheme: HTTP
+            initialDelaySeconds: 1
+            timeoutSeconds: 3
+            periodSeconds: 2
+            successThreshold: 1
+            failureThreshold: 30
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: Never
+          securityContext:
+            capabilities:
+              drop:
+                - ALL
+            privileged: false
+            runAsUser: 1337
+            runAsGroup: 1337
+            runAsNonRoot: true
+            readOnlyRootFilesystem: true
+            allowPrivilegeEscalation: false
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 0
+      dnsPolicy: ClusterFirst
+      serviceAccountName: sleep
+      serviceAccount: sleep
+      securityContext:
+        fsGroup: 1337
+      schedulerName: default-scheduler
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
